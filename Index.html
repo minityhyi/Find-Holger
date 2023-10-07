@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Holger</title>
+    <meta name="description" content="A simple HTML document with metadata, header, and body.">
+    <meta name="author" content="Your Name">
+    <!-- You can add more metadata here as needed -->
+</head>
+<body>
+    <header>
+        <h1>Velkommen til find holger</h1>
+    </header>
+    <main>
+        <div style="padding: 3rem;">
+            <div class="myConsole" id="myConsole"> </div>
+        </div>
+        <div id="buttons"></div> 
+    </main>
+    <style> 
+    .myConsole{
+        width: 100%;
+        font-family: Consolas, monospace;
+        white-space: pre;
+        color: white;
+        background-color: black;
+        padding: 2rem;
+    }
+
+    .button {
+        margin: 1rem;
+    }
+    </style>
+    <script>
+        let stage = 0;
+        let name = "";
+        let health = 10;
+        intro();
+        function intro(){
+            let myConsole = document.getElementById("myConsole");
+            addButton("Forsæt", con);
+            
+            addLine( "___       __    ______                                 _____       ");
+            addLine( "__ |     / /_______  /__________________ ________      __  /______ ");
+            addLine( "__ | /| / /_  _ \\_  /_  ___/  __ \\_  __ `__ \\  _ \\     _  __/  __ \\");
+            addLine( "__ |/ |/ / /  __/  / / /__ / /_/ /  / / / / /  __/     / /_ / /_/ /");
+            addLine( "____/|__/  \\___//_/  \\___/ \\____//_/ /_/ /_/\\___/      \\__/ \\____/ ");
+            addLine( "                                                                   ");
+            addLine( "______________       _________   ______  __     ______                        _____________            _________                       ");
+            addLine( "___  ____/__(_)____________  /   ___  / / /________  /______ _____________    ___  __/__  /______      __  ____/_____ _______ ________ ");
+            addLine( "__  /_   __  /__  __ \\  __  /    __  /_/ /_  __ \\_  /__  __ `/  _ \\_  ___/    __  /  __  __ \\  _ \\     _  / __ _  __ `/_  __ `__ \\  _ \\");
+            addLine( "_  __/   _  / _  / / / /_/ /     _  __  / / /_/ /  / _  /_/ //  __/  /        _  /   _  / / /  __/     / /_/ / / /_/ /_  / / / / /  __/");
+            addLine( "/_/      /_/  /_/ /_/\\__,_/      /_/ /_/  \\____//_/  _\\__, / \\___//_/         /_/    /_/ /_/\\___/      \\____/  \\__,_/ /_/ /_/ /_/\\___/ ");
+            addLine( "                                                     /____/                                                                            ");
+            addLine( "Tryk forsæt");
+        }
+        function con(){
+            stage += 1;
+
+            if (stage == 1) {
+                introStage1();
+            }
+            else if (stage == 2) {
+                clearConsole();
+                clearButtons();
+                addLine("Så du hedder " + name);
+                addButton("Ja", con); 
+            }
+            else if (stage = 3) {
+                anneofLotte1();
+            }
+        }
+
+        function introStage1(){
+            let myConsole = document.getElementById("myConsole");
+            clearConsole();
+            clearButtons();
+            addLine("Hvad hedder du?");
+            addButton("Hedder du Ib?", erIb);
+            addButton("Jeg hedder ikke ib!", ikkeIb);
+        }
+
+        function anneofLotte1() {
+            clearConsole();
+            clearButtons();
+
+            addLine("For at få næste besked så tryk 'enter'");
+            //Console.ReadKey();
+            addLine("Din opgave" + name + " er at finde Holger Dum. Dum. Dum...");
+            //Console.ReadKey();
+            addLine("Du ser Anne og lotte stå op af et stakit\nDe har solbriller på  <(▀¯▀ <)");
+            //Console.ReadKey();
+            addLine("Går du over til dem?");
+            //Console.ReadKey();
+            addLine("Altså du har ikke så meget andet at lave\nPrøv at skriv 'gå'");
+            /*
+            string gå = (Console.ReadLine()).ToLower();
+            while (gå != "gå")
+            {
+                Console.WriteLine("Ka du ikke stave eller hva? du skal bare skrive 'gå'");
+                gå = Console.ReadLine();
+            }
+            */
+
+            //Console.Clear();
+            addLine("Du går over til dem, de kigger på dig lidt mærkeligt, som ekspedienter bag disken kigger på kunder i lidt for dyr tøjbutikker");
+
+            addLine("Prøv at stil dem et sprøgsmål om hvor Find Holger er");
+            /*
+            string input = Console.ReadLine();
+            while (input.Length <= 1)
+            {
+                Console.WriteLine("Kom du til at trykke 'Enter'? Eller er du måske bange for Anne og Lotte og tør ikke spørge dem?");
+                Console.WriteLine("prøv igen de bider ikke... måske :p");
+                input = Console.ReadLine();
+            }
+            */
+            
+            addLine("''Sku du spørge for nogen?''. Spørger Anne");
+            //Console.ReadKey();
+            addLine("''øh ja, for mig selv:)'' siger du");
+            //Console.ReadKey();
+            addLine("''øhm'når-okay så''");
+            //Console.ReadKey();
+            addLine("''Politiet har ledt efter ham i langt tid, rygtet på gaden mener at hans rød og hvid strippered trøje kommer af, at han har misfarved sin fængselstrøje i vask'' siger Lotte" );
+            //Console.ReadKey();
+            addLine("''Han er en hårdbanan, og med din fysik kan du nok kun holde til 5 klap på hovedet'' spytter Anne efter dig");
+            //Console.ReadKey();
+            addLine("Du tøver kort og spørger så. ''Hvad er Klap på hovedet forn'åget''");
+            //Console.ReadKey();
+            addLine("*Anne klapper dig en på hovedet* ''Skal du være flabet, eller hvad?");
+            health--;
+            //Console.ReadKey();
+            addLine("''Det er den mængde af bank du kan holde til, før du hilser på Sidney Lee i himlen''");
+            //Console.ReadKey();
+            addLine("Anne er på vej til at vabbe dig en mere bare af lyst, da en stodder kommer hen til jer");
+            //Console.ReadKey();
+            //Console.Clear();
+            //billede af stodderen
+            addLine("                      ____...                                  ");
+            addLine("             .-\"--\"\"\"\".__    `.                                ");
+            addLine("            |            `    |                                ");
+            addLine("  (         `._....------.._.:          ");
+            addLine("   )         .()''        ``().                                ");
+            addLine("  '          () .=='  `===  `-.         ");
+            addLine("   . )       (         g)                                ");
+            addLine("    )         )     /        J          ");
+            addLine("   (          |.   /      . (                                  ");
+            addLine("   $$         (.  (_'.   , )|`                                 ");
+            addLine("   ||         |\\`-....--'/  ' \\                                ");
+            addLine("  /||.         \\\\ | | | /  /   \\.                              ");
+            addLine(" //||(\\         \\`-===-'  '     \\o.                            ");
+            addLine(".//7' |)         `. --   / (     OObaaaad888b.                 ");
+            addLine("(<<. / |     .a888b`.__.'d\\     OO888888888888a.               ");
+            addLine(" \\  Y' |    .8888888aaaa88POOOOOO888888888888888.              ");
+            addLine("  \\  \\ |   .888888888888888888888888888888888888b              ");
+            addLine("   |   |  .d88888P88888888888888888888888b8888888.             ");
+            addLine("   b.--d .d88888P8888888888888888a:f888888|888888b             ");
+            addLine("   88888b 888888|8888888888888888888888888\\8888888");
+            //Console.ReadKey();
+            addLine("''Står i nu og prostiturer jer selv for ostehapser igen Anne og Lotte'' Spørger stodderen kækt");
+            //Console.ReadKey();
+            addLine("''Det skulle du aldrig have sagt til mig!'' Siger Anne og fronter ham");
+            //Console.ReadKey();
+            addLine("''Hvad skulle jeg ikke sige til dig?'' Håner stodderen");
+            //Console.ReadKey();
+            addLine("''Du skulle aldrig have sagt ostehapser! Til Mig!''");
+            //Console.ReadKey();
+            addLine("''Smadder ham " + name + "''");
+            //Console.Clear();
+        }
+
+        function erIb() {
+            name = "ib";
+            con();
+        }
+
+        function ikkeIb() {
+            name = "Ikke ib";
+            con();
+        }
+
+        function clearConsole() {
+            let myConsole = document.getElementById("myConsole");
+            myConsole.innerHTML = "";
+        }
+
+        function clearButtons() {
+            let myConsole = document.getElementById("buttons");
+            myConsole.innerHTML = "";
+        }
+
+        function addLine(tekst) {
+            let myConsole = document.getElementById("myConsole");
+
+            tekst = replaceSpaces(tekst, "&nbsp;");
+            myConsole.innerHTML += tekst;
+            myConsole.innerHTML += "</br>"
+        }
+
+        function chaButText(tekst){
+            let button = document.getElementById("button");
+            button.innerHTML = tekst;
+        }
+
+
+        function replaceSpaces(inputString, replacement) {
+            // Use a regular expression with the 'g' flag to replace all spaces
+            let regex = / /g;
+            
+            // Use the replace() method to replace spaces with the specified replacement string
+            let result = inputString.replace(regex, replacement);
+            
+            return result;
+        }
+
+        function addButton (tekst, functionToCall){
+            let buttons = document.getElementById("buttons");
+            var newButton = document.createElement("button");
+            newButton.innerHTML = tekst;
+            newButton.classList.add("button");
+            newButton.addEventListener("click", functionToCall);
+
+            buttons.appendChild(newButton);
+        }
+
+    </script>
+</body>
+</html>
